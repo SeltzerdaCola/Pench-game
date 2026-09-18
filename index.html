@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pench.css"/>
+  <script src="pench.js" type="module"></script>
+  <title>Pench Game deluxe</title>
+</head>
+<body>
+  <div id="navbar">
+    <button class="navbutton" onclick="show(0)" style="background-color: #829bf5;">About</button>
+    <button class="navbutton" onclick="show(1)"style="background-color: #7a8ac2;">Endings</button>
+    <button class="navbutton" onclick="show(2)"style="background-color: #718df5;">Credits</button>
+    <button class="navbutton" onclick="show(3)"style="background-color: #6d8f1a;">Changelog</button>
+  </div>
+  <div id="titleheader">
+    <h1 id="title" >Pench game</h1>
+    <h4 id="credit" >Made by pench<br><br>VERY SUPER EARLY HEAVILY WIP DEV Version</h4>
+  </div>
+  <div id="game">
+    <h3 id="message" >Loading...</h3>
+    <img src="pics/pench_placeholder.png" id="pic">
+    <h3>What will you do?</h3>
+    <div id="buttons">
+      <button id="b1">Loading...</button>
+      <button id="b2">Loading...</button>
+      <button id="b3">Loading...</button>
+      <button id="b4">Loading...</button>
+      <button id="b5">Loading...</button>
+
+    </div>
+  </div>
+  
+  <div id="about" class="modal">
+    <h2>PENCH GAME<span class="close">&times</span></h2>
+    <p>Pench game is basically a story game!!<br>
+      Dive into the world of Pench! Explore locations!
+      Meet distinct characters!<br><br>
+      Made by pench, for fun. Any characters,
+      locations, and events in this game are fictional.
+    </p>
+  </div>
+  <div id="endings" class="modal">
+    <h2>Endings<span class="close">&times</span></h2>
+    <p>Coming soon!</p>
+  </div>
+  <div id="credits" class="modal">
+    <h2>Credits<span class="close">&times</span></h2>
+    <p>Coming soon!</p>
+  </div>
+  <div id="changelog" class="modal">
+    <h2>Changelog<span class="close">&times</span></h2>
+    <h3>Sep 18, 2026</h3>
+    <p>-Added navigation bar functionality<br>
+      -Added about and changelog section<br>
+      -Fixed margins
+    </p>
+  </div>
+</body>
+<script src="ui.js"></script>
+</html>

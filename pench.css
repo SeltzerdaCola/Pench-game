@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: #fff7fe;
+}
+div {
+  padding: 0px;
+}
+#titleheader {
+  position: relative;
+  top: 0;
+  background-color: lightblue;
+  padding: 0px 20px 0px;
+  text-align: center;
+  margin: 0;
+}
+#navbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  background-color: #d0d8f7;
+  height: 125%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: scroll;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: #248f8f;
+}
+.navbutton {
+  border-width: 0px;
+  font-size: 30px;
+  margin: 0px;
+}
+#titleheader {
+  margin: 0px;
+}
+#game {
+  text-align: center;
+  background-color: lavenderblush;
+  padding: 0px 20px 0px;
+  margin: 0;
+}
+#game h3 {
+  text-align: center;
+}
+img {
+  max-width: 80%;
+  width: auto;
+}
+button {
+  font-size: 20px;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+.close {
+  float: right;
+  font-size: 125%;
+}
+.modal {
+  display: none;
+  max-width: 100%;
+  margin: 15px;
+  padding: 5px 10px 5px;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  background-color: white;
+  border: 5px solid #DDDDDD;
+  border-radius: 20px;
+}
