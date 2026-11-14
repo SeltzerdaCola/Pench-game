@@ -1,4 +1,4 @@
-###Pench game
+### Pench game
 
 Hello, welcome to my web game story adventure thingy, Pench Game!! 
 
