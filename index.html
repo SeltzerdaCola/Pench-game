@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Pench game is basically a story game!! Dive into the world of Pench! Explore locations! Meet distinct characters! Get endings!">
+  <meta charset="UTF-8">
+  
+  <meta property="og:title" content="Pench game - play now!">
+  <meta property="og:description" content="Pench game is basically a story game! Explore the world of pench!">
+  <meta property="og:image" content="pics/pench_placeholder.png">
+  
+  <link rel="stylesheet" href="pench.css"/>
+  <link rel="icon" type="image/png" href="pics/favicon.png">
+  <link rel="canonical" href="https://pench-game.netlify.app">
   <script src="pench.js" type="module"></script>
-  <style>body{display:flex;flex-direction:column;margin:0;padding:0;background-color:#fff7fe;font-family:"Tahoma",serif}div{padding:0}#titleheader{position:relative;top:0;background-color:#add8e6;padding:0 20px;text-align:center;margin:0}#navbar{position:sticky;z-index:1;top:0;display:flex;background-color:#d0d8f7;height:125%;margin:0;padding:0;overflow-x:auto;border-bottom:2px inset #969696;box-shadow:-1px 12px 20px -15px #000000ab}.navbutton{border-width:0;font-size:30px;margin:0;border:2px outset #6464644d}#titleheader{margin:0;border-bottom:3px inset #0000004d}#title{margin:10px}#credit{margin-top:0}#game{text-align:center;background-color:#0000;padding:0 20px;margin:0;flex:1}#pbucks{display:block;margin:2px}#pbbox{margin-top:5px;padding:1px 0;background-color:#0a0a140d;box-shadow:0 10px 10px -10px #000000ab;border:2px outset #00000080;border-radius:5px}img{display:block;margin:auto;max-width:80%;width:auto;border:2px outset #00000080;border-radius:10px;box-shadow:0 10px 10px -10px #000000ab}button{font-size:20px;max-height:2em}#buttons{display:block;justify-content:center;overflow-x:auto;background-color:#0a140a0d;border:2px outset #00000080;border-radius:10px;box-shadow:0 10px 10px -10px #000000ab}#buttons button{background-color:#ffffff1a;margin:5px 3px;border:2px outset #6464644d;border-radius:5px}audio{display:none}.close{float:right;font-size:125%}.modal{display:none;margin-left:15px;margin-right:15px;padding:5px 10px;position:fixed;z-index:2;top:10px;max-height:80vh;background-color:#fff;overflow-y:auto;border:5px solid #DDD;box-shadow:0 20px 10px 0 #0003;border-radius:20px}#devpanel{margin:5px}</style>
-  <title>Pench Game - a Story Game</title>
+  <script src="ui.js" type="module"></script>
+  <title>Pench Game | Play this story game on the web</title>
 </head>
 <body>
   <div id="navbar">
@@ -15,6 +24,7 @@
     <button class="navbutton" style="background-color: #7a8ac2;">Endings</button>
     <button class="navbutton" style="background-color: #718df5;">Credits</button>
     <button class="navbutton" style="background-color: #6d8f1a;">Changelog</button>
+    <button class="navbutton" style="background-color: #5f7d6a;">Settings</button>
   </div>
   <div id="titleheader">
     <h1 id="title">Pench game</h1>
@@ -24,16 +34,18 @@
     <div id="pbbox"><h3 id="pbucks">$0</h3></div>
     <h3 id="message" >Loading...</h3>
     <img src="pics/pench_placeholder.png" id="pic" alt="There is supposed to be a picture here.">
-    <h3>What will you do?</h3>
+    <h3 id="cmnd">What will you do?</h3>
     <div id="buttons"></div>
     <br><br>
   </div>
   
+  <div id="cover"></div>
   <div id="about" class="modal">
     <h2>PENCH GAME<span class="close">&times</span></h2>
-    <p>Pench game is basically a story game!!<br>
+    <p>Pench game is basically a story game!! Made with mainly JavaScript!<br>
       Dive into the world of Pench! Explore locations!
-      Meet distinct characters!<br><br>
+      Meet distinct characters!<br>
+      Recommended to play on mobile!! (Although PC is fine)<br><br>
       Made by pench, for fun. Any characters,
       locations, and events in this game are fictional.
     </p>
@@ -42,7 +54,7 @@
   <div id="endings" class="modal">
     <h2>Endings<span class="close">&times</span></h2>
     <h3>Here are the endings you got in order (<b><span id="endingcount"></span></b>):</h3>
-    <h3 id="endinglist">No endings yet :P</h3>
+    <h3 id="endinglist">No endings yet :P Just go press buttons or something</h3>
   </div>
   <div id="credits" class="modal">
     <h2>Credits<span class="close">&times</span></h2>
@@ -54,7 +66,7 @@
   </div>
   <div id="changelog" class="modal">
     <h2>Changelog<span class="close">&times</span></h2>
-    <h3>Oct 29, 2026</h3>
+    <h3>Oct 24, 2026</h3>
     <p>
       Srry for long wait guys &#x1F979<br>
       -Upgraded UI and Engine to V4<br>
@@ -79,6 +91,27 @@
       -Added about and changelog section<br>
       -Fixed margins
     </p>
+  </div>
+  <div id="settings" class="modal">
+    <h2>Settings<span class="close">&times</span></h2>
+    <button type="button" id="r_endings">Reset endings</button>
+    <p>Will reset all endings you have got.<br>
+      NO WARNING WINDOWS OR WHATSOEVER
+    </p>
+    <p><b>Name for story</b></p>
+    <input type="text" id="name_inp">     <button type="button" id="name_enter">Submit</button>
+    <p>This name will appear anywhere throughout the story.</p>
+    <p><input type="checkbox" id="sfx_tg" checked> Sound effects</p>
+  </div>
+  <div id="devpanel">
+    <h3>Dev panel</h3>
+    <p>Set node</p>
+    <input type="text" id="dev_setnode">
+    <button type="button" id="dev_setnode_enter">Go</button>
+    <p>Action</p>
+    <input type="text" id="dev_action">
+    <button type="button" id="dev_action_enter">Go</button>
+    <br><br>
   </div>
 </body>
 </html>
