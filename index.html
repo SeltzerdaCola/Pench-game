@@ -4,9 +4,10 @@
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="pench.css"/>
+  <meta name="description" content="Pench game is basically a story game!! Dive into the world of Pench! Explore locations! Meet distinct characters! Get endings!">
   <script src="pench.js" type="module"></script>
-  <title>Pench Game deluxe</title>
+  <style>body{display:flex;flex-direction:column;margin:0;padding:0;background-color:#fff7fe;font-family:"Tahoma",serif}div{padding:0}#titleheader{position:relative;top:0;background-color:#add8e6;padding:0 20px;text-align:center;margin:0}#navbar{position:sticky;z-index:1;top:0;display:flex;background-color:#d0d8f7;height:125%;margin:0;padding:0;overflow-x:auto;border-bottom:2px inset #969696;box-shadow:-1px 12px 20px -15px #000000ab}.navbutton{border-width:0;font-size:30px;margin:0;border:2px outset #6464644d}#titleheader{margin:0;border-bottom:3px inset #0000004d}#title{margin:10px}#credit{margin-top:0}#game{text-align:center;background-color:#0000;padding:0 20px;margin:0;flex:1}#pbucks{display:block;margin:2px}#pbbox{margin-top:5px;padding:1px 0;background-color:#0a0a140d;box-shadow:0 10px 10px -10px #000000ab;border:2px outset #00000080;border-radius:5px}img{display:block;margin:auto;max-width:80%;width:auto;border:2px outset #00000080;border-radius:10px;box-shadow:0 10px 10px -10px #000000ab}button{font-size:20px;max-height:2em}#buttons{display:block;justify-content:center;overflow-x:auto;background-color:#0a140a0d;border:2px outset #00000080;border-radius:10px;box-shadow:0 10px 10px -10px #000000ab}#buttons button{background-color:#ffffff1a;margin:5px 3px;border:2px outset #6464644d;border-radius:5px}audio{display:none}.close{float:right;font-size:125%}.modal{display:none;margin-left:15px;margin-right:15px;padding:5px 10px;position:fixed;z-index:2;top:10px;max-height:80vh;background-color:#fff;overflow-y:auto;border:5px solid #DDD;box-shadow:0 20px 10px 0 #0003;border-radius:20px}#devpanel{margin:5px}</style>
+  <title>Pench Game - a Story Game</title>
 </head>
 <body>
   <div id="navbar">
@@ -16,25 +17,17 @@
     <button class="navbutton" style="background-color: #6d8f1a;">Changelog</button>
   </div>
   <div id="titleheader">
-    <h1 id="title" >Pench game</h1>
-    <h4 id="credit" >Made by pench<br><br>EARLY HEAVY WIP DEV Version</h4>
+    <h1 id="title">Pench game</h1>
+    <h4 id="credit">Made by pench<br>EARLY WIP DEV Version</h4>
   </div>
   <div id="game">
-    <h3 id="pbucks">$0</h3>
+    <div id="pbbox"><h3 id="pbucks">$0</h3></div>
     <h3 id="message" >Loading...</h3>
-    <img src="pics/pench_placeholder.png" id="pic">
+    <img src="pics/pench_placeholder.png" id="pic" alt="There is supposed to be a picture here.">
     <h3>What will you do?</h3>
     <div id="buttons"></div>
-    <h1><br></h1>
+    <br><br>
   </div>
-  
-  <audio id="click" controls>
-    <source src="audio/click.mp3">
-    Pro tip: your device doesnt support audio
-  </audio>
-  <audio id="e_audio" controls>
-    <source src="audio/ending.mp3">
-  </audio>
   
   <div id="about" class="modal">
     <h2>PENCH GAME<span class="close">&times</span></h2>
@@ -44,6 +37,7 @@
       Made by pench, for fun. Any characters,
       locations, and events in this game are fictional.
     </p>
+    <p><a href="https://youtube.com/@seltzer-4625?si=YI_2Ci55DEyU3xD-">My YouTube</a></p>
   </div>
   <div id="endings" class="modal">
     <h2>Endings<span class="close">&times</span></h2>
@@ -60,6 +54,12 @@
   </div>
   <div id="changelog" class="modal">
     <h2>Changelog<span class="close">&times</span></h2>
+    <h3>Oct 29, 2026</h3>
+    <p>
+      Srry for long wait guys &#x1F979<br>
+      -Upgraded UI and Engine to V4<br>
+      -Added 6 new endings
+    </p>
     <h3>Sep 24, 2026</h3>
     <p>-Fixed bathtub bug<br>
       -Upgraded UI to V3
