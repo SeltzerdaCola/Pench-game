@@ -6,4 +6,4 @@ It's basically WIP tho
 
 I luv web dev. 
 
-(Click here for pench game site)[https://pench-game.netlify.app]
+[Click here for pench game site](https://pench-game.netlify.app)
